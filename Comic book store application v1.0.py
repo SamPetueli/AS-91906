@@ -1,10 +1,8 @@
-####################  IMPORTS  #######################
 from tkinter import *
 from tkinter import ttk
 import random
 
 
-##################  CLASS CODE  ######################
 # Create the book class
 class book:
   """The book class stores the details of each book and has methods to restock, sell and calculate progress towards the Super Dude goal"""
@@ -14,7 +12,7 @@ class book:
     self.sold = sold
     book_list.append(self)
   
-  # restock method adds stock to stock
+  # Restock function adds stock on top of stock
   def restock(self, amount):
     if amount > 0:
       self.stock += amount
@@ -22,7 +20,7 @@ class book:
     else:
       return False
   
-  # sell method subtracts stock from stock
+  # Sell function subtracts stock from stock
   def sell(self, amount):
     if amount > 0 and amount <= self.stock:
       self.stock -= amount
@@ -30,18 +28,15 @@ class book:
       return True
     else:
       return False
-  
 
-
-##############  FUNCTIONS AND SETUP ###############
-# Create a function to get book names list
+# Create a function for list of books
 def create_name_list():
   name_list = []
   for book in book_list:
     name_list.append(book.name)
   return name_list
 
-# Create a function that will update the stock.
+# Function for updating the stock.
 def update_stock():
   total_sold = 0
   stock_string = ""
@@ -101,7 +96,7 @@ Comic2 = book("Lizard Man", 12, 0)
 Comic3 = book("Water Woman", 3, 0)
 book_names = create_name_list()
 
-##################  GUI CODE  ######################
+#GUI code
 root = Tk()
 root.title("Comic book store")
 
