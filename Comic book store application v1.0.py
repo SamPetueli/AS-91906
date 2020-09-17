@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import ttk
 import random
 
-
 # Create the book class
 class book:
   """The book class stores the details of each book and has methods to restock, sell and calculate progress towards the Super Dude goal"""
